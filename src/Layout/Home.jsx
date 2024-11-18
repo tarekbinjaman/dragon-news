@@ -1,7 +1,10 @@
 import React from 'react';
-import Navbar from '../assets/Navbar';
+import Navbar from '../Components/Navbar';
 import Header from '../Components/Header'
-import Main from '../Components/Main';
+import LeftNavbar from '../Components/layout component/LeftNavbar';
+import CategoryNews from '../Pages/CategoryNews';
+import { Outlet } from 'react-router-dom';
+import RightNav from '../Components/layout component/RightNav';
 
 
 const Home = () => {
@@ -9,7 +12,21 @@ const Home = () => {
         <div className='font-poppins'>
             <Header></Header>
             <Navbar></Navbar>
-            <Main></Main>
+            <main className='grid md:grid-cols-12 gap-3 mx-auto w-11/12'>
+
+            <aside className='left col-span-3'>
+                <LeftNavbar></LeftNavbar>
+            </aside>
+
+            <section className='col-span-6'> 
+                <Outlet></Outlet>
+            </section>
+
+            <aside className='col-span-3'>
+                <RightNav></RightNav>
+            </aside>
+
+            </main>
             
         </div>
     );

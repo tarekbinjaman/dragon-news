@@ -1,5 +1,5 @@
 import Findus from "../Findus";
-import SocialLogin from "./SocialLogin";
+import SocialLogin from "../SocialLogin";
 
 const RightNav = () => {
     return (

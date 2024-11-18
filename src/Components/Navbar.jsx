@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import user from './Images/user.png';
+import user from '../assets/Images/user.png';
 
 const Navbar = () => {
     return (
@@ -8,7 +8,7 @@ const Navbar = () => {
             <div className="grid grid-cols-3 items-center">
                 {/* Start-aligned */}
                 <div className="flex justify-start">
-                    <span>Logo or Start Content</span>
+                    <span></span>
                 </div>
 
                 {/* Center-aligned */}
@@ -23,7 +23,7 @@ const Navbar = () => {
                 {/* End-aligned */}
                 <div className="flex justify-end items-center gap-2">
                     <img className="w-[40px] h-[40px]" src={user} alt="User avatar" />
-                    <button className="bg-gray-500 text-white px-4 py-2 rounded-none">Login</button>
+                    <Link to ="/auth/login" className="bg-gray-500 text-white px-4 py-2 rounded-none">Login</Link> 
                 </div>
             </div>
         </div>
