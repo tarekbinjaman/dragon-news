@@ -4,10 +4,12 @@ import './index.css'
 import App from './App.jsx'
 import {
   createBrowserRouter,
+  Navigate,
   RouterProvider,
 } from "react-router-dom";
 import Root from './assets/Root.jsx';
 import Home from './Layout/Home.jsx';
+import CategoryNews from './Pages/CategoryNews.jsx';
 
 const router = createBrowserRouter([
   {
@@ -15,8 +17,13 @@ const router = createBrowserRouter([
     element: <Root></Root>,
     children: [
       {
+        path: "",
+        element: <Navigate to={"/category/01"}></Navigate>
+      },
+      {
         path: "/category/:id",
-        element: <h2>This is a category</h2>,
+        element: <CategoryNews></CategoryNews>,
+        loader: ({params}) => fetch(`https://openapi.programming-hero.com/api/news/category/${params.id}`)
       },
       {
         path: "*",
