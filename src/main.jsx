@@ -15,17 +15,13 @@ const router = createBrowserRouter([
     element: <Root></Root>,
     children: [
       {
-        path: "/",
-        element: <Home></Home>
+        path: "/category/:id",
+        element: <h2>This is a category</h2>,
       },
       {
         path: "*",
         element: <h2 className='text-center'>Page not found</h2>
       },
-      {
-        path: "/category/:id",
-        element: <h2>This is a category</h2>,
-      }
     ],
   },
 ]);
